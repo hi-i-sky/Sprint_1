@@ -8,7 +8,10 @@ class TestCase:
         self.steps[step_number] = step_text
 
     def delete_step(self, step_number):
-        self.steps.pop(step_number)
+        if step_number in self.steps:
+            self.steps.pop(step_number)
+        else:
+            print(f"Шаг {step_number} не найден!")
 
     def set_result(self, result):
         self.result = result
